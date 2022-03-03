@@ -1,14 +1,16 @@
+/* transparent border so that img does not jump around */
 img {
   border: 10px transparent solid;
+  /* margin-left: 100px; */
 }
 
+/* when checked, add a border to the img */
 label input[type="radio"]:checked + img {
   border: 10px solid yellowgreen;
-  background: hotpink;
 }
 
-/* hiding the radio buttons the  a11y. way: https://www.a11yproject.com/posts/how-to-hide-content/ */
-
+/* hiding the radio buttons the  a11y. way: 
+https://www.a11yproject.com/posts/how-to-hide-content/ */
 input[type="radio"],
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -20,16 +22,17 @@ input[type="radio"],
   width: 1px;
 }
 
+/* setup transition for the icon */
 svg {
   opacity: 0;
   transition: all 2s; /* normally max 0.3s */
 }
 
 input[type="radio"]:checked ~ svg {
-  /* display: inline-block; */
   opacity: 1;
 }
 
+/* place everything inside label on top of each other */
 label {
   display: grid;
 }
